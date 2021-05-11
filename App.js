@@ -2,15 +2,24 @@ import {StatusBar} from 'expo-status-bar';
 import React, {useEffect, useState} from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {getUsers} from "./src/api/API";
-import UsersComponent from "./src/components/UsersComponent";
+import {createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native";
+import {UsersComponent, UserDetailsComponent, PostsComponent} from "./src/components";
+
+let StackNavigator = createStackNavigator();
 
 export default function App() {
-// 33:30
     return (
-        <View style={styles.container}>
-            <UsersComponent/>
-        </View>
-    );
+        <NavigationContainer>
+            <StackNavigator.Navigator>
+                <StackNavigator.Screen name={'Users'} component={UsersComponent}/>
+                <StackNavigator.Screen name={'Posts'} component={PostsComponent}/>
+                <StackNavigator.Screen name={'User Details'} component={UserDetailsComponent}/>
+            </StackNavigator.Navigator>
+        </NavigationContainer>
+
+    )
+        ;
 }
 
 const styles = StyleSheet.create({});

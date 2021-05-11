@@ -1,16 +1,17 @@
 import React from 'react';
 import {View, Text, Button, TouchableOpacity, FlatList, StyleSheet} from 'react-native';
 
-const UserComponent = (props) => {
-    const {item} = props;
+export const UserComponent = (props) => {
+    const {item, nav} = props;
 
     return <View style={[styles.box]}>
         <Text>name: {item.name}</Text>
         <Text>email: {item.email}</Text>
+        <Button title={'user details'} onPress={() => {
+            nav.navigate('User Details', {data: item})
+        }}/>
     </View>;
 };
-
-export default UserComponent;
 
 const styles = StyleSheet.create({
     box: {

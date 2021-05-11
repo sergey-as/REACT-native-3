@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Button, TouchableOpacity, FlatList, StyleSheet} from 'react-native';
 import {getUsers} from "../api/API";
-import UserComponent from "./UserComponent";
+import {UserComponent} from "./UserComponent";
 
-const UsersComponent = () => {
+export const UsersComponent = (props) => {
+    const {navigation} = props;
+
     let [users, setUsers] = useState([]);
-
-    console.log(users);
 
     // async function fetchData() {
     //     let users = await getUsers();
@@ -31,14 +31,12 @@ const UsersComponent = () => {
             data={users}
             renderItem={
                 ({item}) => {
-                    return <UserComponent item={item}/>
+                    return <UserComponent nav={navigation} item={item}/>
                 }}
             keyExtractor={item => '' + item.id}
         />
 
     </View>;
 };
-
-export default UsersComponent;
 
 const styles = StyleSheet.create({});
