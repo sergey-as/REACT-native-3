@@ -1,12 +1,13 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {View, Text, Button, TouchableOpacity, FlatList} from 'react-native';
-import {createDrawerNavigator} from "@react-navigation/drawer";
 
-export const PostsComponent = () => {
+const TemplateComponent = () => {
     return <View>
-        <Text>PostsComponent page</Text>
+        <Text>TemplateComponent page</Text>
     </View>;
 };
+
+export default TemplateComponent;
 
 const styles = StyleSheet.create({});

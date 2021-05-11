@@ -34,6 +34,7 @@ export const UsersComponent = (props) => {
                     return <UserComponent nav={navigation} item={item}/>
                 }}
             keyExtractor={item => '' + item.id}
+            // horizontal={true}
         />
 
     </View>;
