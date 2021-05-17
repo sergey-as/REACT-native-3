@@ -6,6 +6,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 import {NavigationContainer} from "@react-navigation/native";
 import {UsersComponent, UserDetailsComponent, PostsComponent} from "./src/components";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import PostDrawer from "./src/components/PostDrawer";
 
 // let StackNavigator = createStackNavigator();
 let BottomTabNavigator = createBottomTabNavigator();
@@ -19,10 +20,9 @@ export default function App() {
             {/*    <StackNavigator.Screen name={'User Details'} component={UserDetailsComponent}/>*/}
             {/*</StackNavigator.Navigator>*/}
 
-            // 25:00
             <BottomTabNavigator.Navigator tabBarOptions={{tabStyle:{justifyContent: 'center', alignItems: 'center'}}}>
                 <BottomTabNavigator.Screen name={'Users'} component={UsersComponent}/>
-                <BottomTabNavigator.Screen name={'Posts'} component={PostsComponent}/>
+                <BottomTabNavigator.Screen name={'Posts'} component={PostDrawer}/>
             </BottomTabNavigator.Navigator>
 
         </NavigationContainer>
